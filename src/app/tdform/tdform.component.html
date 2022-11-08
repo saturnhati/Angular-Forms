@@ -1,0 +1,100 @@
+<h1 clasS="my-4">Template Driven Form</h1>
+<form (ngSubmit)="addHero()" #form="ngForm">
+  <div class="mb-3">
+    <input
+      ngModel
+      type="text"
+      class="form-control"
+      name="name"
+      placeholder="Name"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      ngModel
+      type="text"
+      class="form-control"
+      name="alterEgo"
+      placeholder="Alter-ego"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <select ngModel class="form-select" name="power" required>
+      <option value="" disabled selected>Select a power</option>
+      <option value="X-Ray vision">X-Ray vision</option>
+      <option value="Invisibility">Invisibility</option>
+      <option value="Flight">Flight</option>
+      <option value="Teleport">Teleport</option>
+      <option value="Super-speed">Super-speed</option>
+      <option value="Shapeshifting">Shapeshifting</option>
+      <option value="Telekinesis">Telekinesis</option>
+      <option value="Super-strenght">Super-strength</option>
+      <option value="Mind control">Mind control</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <input
+      ngModel
+      type="text"
+      class="form-control"
+      name="enemy"
+      placeholder="Enemy"
+      maxlength="10"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      ngModel
+      type="text"
+      class="form-control"
+      name="planet"
+      placeholder="Planet"
+      minlength="5"
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      ngModel
+      type="text"
+      class="form-control"
+      name="weakness"
+      placeholder="Weakness"
+    />
+  </div>
+  <div class="mb-3">
+    <button
+      type="submit"
+      [disabled]="form.invalid"
+      class="btn btn-warning text-light"
+    >
+      Create
+    </button>
+  </div>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Alter-ego</th>
+      <th scope="col">Power</th>
+      <th scope="col">Enemy</th>
+      <th scope="col">Planet</th>
+      <th scope="col">Weakness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of superheroes">
+      <td>{{ hero.name }}</td>
+      <td>{{ hero.alterEgo }}</td>
+      <td>{{ hero.power }}</td>
+      <td>{{ hero.enemy }}</td>
+      <td>{{ hero.planet }}</td>
+      <td>{{ hero.weakness }}</td>
+    </tr>
+  </tbody>
+</table>
