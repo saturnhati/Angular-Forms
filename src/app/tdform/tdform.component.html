@@ -5,23 +5,39 @@
       ngModel
       type="text"
       class="form-control"
+      #name="ngModel"
       name="name"
       placeholder="Name"
       required
     />
+    <div
+      *ngIf="name.invalid && name.touched"
+      class="alert alert-danger"
+      role="alert"
+    >
+      Insert a name!
+    </div>
   </div>
   <div class="mb-3">
     <input
       ngModel
       type="text"
       class="form-control"
+      #alterEgo="ngModel"
       name="alterEgo"
       placeholder="Alter-ego"
       required
     />
+    <div
+      *ngIf="alterEgo.invalid && alterEgo.touched"
+      class="alert alert-danger"
+      role="alert"
+    >
+      Insert an alter ego!
+    </div>
   </div>
   <div class="mb-3">
-    <select ngModel class="form-select" name="power" required>
+    <select ngModel class="form-select" #power="ngModel" name="power" required>
       <option value="" disabled selected>Select a power</option>
       <option value="X-Ray vision">X-Ray vision</option>
       <option value="Invisibility">Invisibility</option>
@@ -39,28 +55,45 @@
       ngModel
       type="text"
       class="form-control"
+      #enemy="ngModel"
       name="enemy"
       placeholder="Enemy"
       maxlength="10"
       required
     />
+    <div
+      *ngIf="enemy.invalid && enemy.touched"
+      class="alert alert-danger"
+      role="alert"
+    >
+      Insert an enemy (max 10char)!
+    </div>
   </div>
   <div class="mb-3">
     <input
       ngModel
       type="text"
       class="form-control"
+      #planet="ngModel"
       name="planet"
       placeholder="Planet"
       minlength="5"
       required
     />
+    <div
+      *ngIf="planet.invalid && planet.touched"
+      class="alert alert-danger"
+      role="alert"
+    >
+      Insert a valid planet (min 5char)!
+    </div>
   </div>
   <div class="mb-3">
     <input
       ngModel
       type="text"
       class="form-control"
+      #weakness="ngModel"
       name="weakness"
       placeholder="Weakness"
     />

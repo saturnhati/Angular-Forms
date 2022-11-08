@@ -1,18 +1,25 @@
 <h1 clasS="my-4">Reactive Form</h1>
 <form (ngSubmit)="addHero()" [formGroup]="form2">
   <div class="mb-3">
-    <input type="text" class="form-control" name="name" placeholder="Name" />
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      formControlName="name"
+      placeholder="Name"
+    />
   </div>
   <div class="mb-3">
     <input
       type="text"
       class="form-control"
       name="alterEgo"
+      formControlName="alterEgo"
       placeholder="Alter-ego"
     />
   </div>
   <div class="mb-3">
-    <select class="form-select" name="power">
+    <select class="form-select" name="power" formControlName="power">
       <option value="" disabled selected>Select a power</option>
       <option value="X-Ray vision">X-Ray vision</option>
       <option value="Invisibility">Invisibility</option>
@@ -26,13 +33,20 @@
     </select>
   </div>
   <div class="mb-3">
-    <input type="text" class="form-control" name="enemy" placeholder="Enemy" />
+    <input
+      type="text"
+      class="form-control"
+      name="enemy"
+      formControlName="enemy"
+      placeholder="Enemy"
+    />
   </div>
   <div class="mb-3">
     <input
       type="text"
       class="form-control"
       name="planet"
+      formControlName="planet"
       placeholder="Planet"
     />
   </div>
@@ -41,6 +55,7 @@
       type="text"
       class="form-control"
       name="weakness"
+      formControlName="weakness"
       placeholder="Weakness"
     />
   </div>
@@ -54,8 +69,6 @@
     </button>
   </div>
 </form>
-
-{{ this.form2.statusChanges | async }}
 
 <table class="table">
   <thead>
